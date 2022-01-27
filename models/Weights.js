@@ -29,7 +29,9 @@ Weights.init(
                 model: 'workout',
                 key: 'id'
             }
-            },
+        }
+    },
+    {
         sequelize,
         timestamps: false,
         freezeTableName: true,
