@@ -3,14 +3,8 @@ const router = require('express').Router();
 const { Workout, Weights, Cardio } = require('../../models');
 
 router.get('/', (req, res) => {
-        // find all wokrouts
+        // find all workouts
         Workout.findAll(
-        {
-            include: {
-            model: [Cardio, Weights],
-            attributes: ['cardio_type', 'weight_type']
-            }
-        }
         ).then(workData => res.json(workData))
         .catch(err => {
         console.log(err);
@@ -25,10 +19,6 @@ router.get('/', (req, res) => {
         where: {
             id: req.params.id
         },
-        include: {
-            model: [Cardio, Weights],
-            attributes: ['workout_id']
-        }
         }
     ) .then(workData => res.json(workData))
         .catch(err => {
