@@ -12,10 +12,16 @@ Cardio.init(
             primaryKey: true,
             autoIncrement: true
         },
+
         intensity: {
             type: DataTypes.STRING,
             allowNull: false
         },
+        cardio_type: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        
         duration: {
             type: DataTypes.DECIMAL,
             allowNull: false,

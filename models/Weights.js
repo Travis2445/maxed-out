@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
+const { all } = require('../controllers');
 
 class Weights extends Model {}
 
@@ -11,6 +12,14 @@ Weights.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
+        },
+        weight_type: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        reps: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
         intensity: {
             type: DataTypes.STRING,
