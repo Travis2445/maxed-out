@@ -76,7 +76,7 @@ router.delete('/:id', (req, res) => {
     })
     .then(dbCardioData => {
         if(!dbCardioData) {
-            res.status(404).json({ message: 'Mo cardio workout found with this id. '});
+            res.status(404).json({ message: 'No cardio workout found with this id. '});
             return;
         }
         res.json(dbCardioData);
