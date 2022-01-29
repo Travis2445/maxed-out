@@ -1,10 +1,17 @@
 const router = require('express').Router();
 const { Workout, Weights, Cardio } = require('../../models');
-const sequelize = require('../../config/connection');
+
 
 // GET /api/workout
 router.get('/', (req, res) => {
-    Workout.findAll()
+    Workout.findAll({
+        include: [{
+            model: Weights
+        },
+        {
+            model: Cardio
+        }],
+    })
     .then(dbWorkoutData => res.json(dbWorkoutData))
     .catch(err => {
         console.log(err);
@@ -17,7 +24,13 @@ router.get('/:id', (req, res) => {
     Workout.findOne({
         where: {
             id: req.params.id
-        }
+        },
+        include: [{
+            model: Weights
+        },
+        {
+            model: Cardio
+        }]
     })
     .then(dbWorkoutData => {
         if (!dbWorkoutData) {
@@ -34,9 +47,9 @@ router.get('/:id', (req, res) => {
 
 // POST /api/workout
 router.post('/', (req, res) => {
-    Workout.create({
-        workout_type: req.body.workout_type
-    })
+    Workout.create(
+    req.body
+    )
     .then(dbWorkoutData => res.json(dbWorkoutData))
     .catch(err => {
         console.log(err);

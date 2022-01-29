@@ -6,9 +6,17 @@ Weights.belongsTo(Workout, {
     foreignKey: 'workout_id'
 });
 
+Workout.hasMany(Weights, {
+    foreignKey: 'workout_id'
+});
+
+
 Cardio.belongsTo(Workout, {
     foreignKey: 'workout_id'
 });
 
+Workout.hasMany(Cardio, {
+    foreignKey: 'workout_id'
+});
 
 module.exports = { Workout, Cardio, Weights };
