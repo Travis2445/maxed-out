@@ -1,10 +1,13 @@
 const router = require('express').Router();
 const { Workout, Cardio } = require('../../models');
-const sequelize = require('../../config/connection');
 
 // GET /api/cardio
 router.get('/', (req, res) => {
-    Cardio.findAll()
+    Cardio.findAll(
+        {
+            model: Workout
+        },
+    )
     .then(dbCardioData => res.json(dbCardioData))
     .catch(err => {
         console.log(err);
@@ -17,6 +20,9 @@ router.get('/:id', (req, res) => {
     Cardio.findOne({
         where: {
             id: req.params.id
+        },
+        include: {
+            model: Workout
         }
     })
     .then(dbCardioData => {
@@ -34,12 +40,9 @@ router.get('/:id', (req, res) => {
 
 // POST /api/cardio
 router.post('/', (req, res) => {
-    Cardio.create({
-        cardio_type: req.body.cardio_type,
-        intensity: req.body.intensity,
-        duration: req.body.duration,
-        distance: req.body.distance
-    })
+    Cardio.create(
+        req.body
+    )
     .then(dbCardioData => res.json(dbCardioData))
     .catch(err => {
         console.log(err);
@@ -76,7 +79,7 @@ router.delete('/:id', (req, res) => {
     })
     .then(dbCardioData => {
         if(!dbCardioData) {
-            res.status(404).json({ message: 'Mo cardio workout found with this id. '});
+            res.status(404).json({ message: 'No cardio workout found with this id. '});
             return;
         }
         res.json(dbCardioData);

@@ -44,11 +44,11 @@ router.post('/', (req, res) => {
     })
     .then(dbUserData => {
         req.session.save(() => {
-            req.session.user_id = dbUserData.id;
-            req.session.username = dbUserData.username;
-            req.session.loggedIn = true;
-
-            res.json(dbUserData);
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.loggedIn = true;
+    
+        res.json(dbUserData);
         });
     });
 });
@@ -58,7 +58,7 @@ router.post('/login', (req, res) => {
     // expects {email: 'NewUser@gmail.com', password: 'password'}
     User.findOne({
         where: {
-            email: req.body.email
+        email: req.body.email
         }
     }).then(dbUserData => {
         if (!dbUserData) {
@@ -74,25 +74,25 @@ router.post('/login', (req, res) => {
     
         req.session.save(() => {
           // declare session variables
-            req.session.user_id = dbUserData.id;
-            req.session.username = dbUserData.username;
-            req.session.loggedIn = true;
-    
-            res.json({ user: dbUserData, message: 'You are now logged in!' });
-        });
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.loggedIn = true;
+
+        res.json({ user: dbUserData, message: 'You are now logged in!' });
+    });
     });
 });
 
 router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-        req.session.destroy(() => {
+        if (req.session.loggedIn) {
+            req.session.destroy(() => {
             res.status(204).end();
-        });
-    }
-    else {
-        res.status(404).end();
-    }
-});
+            });
+        }
+        else {
+            res.status(404).end();
+        }
+    });
 
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
