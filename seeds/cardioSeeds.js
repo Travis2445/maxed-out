@@ -16,9 +16,10 @@ const cardioData = [
         workout_id: 1
     },
     {
-        cardio_type: "Jump Rope",
-        intensity: "High",
-        duration: "15.00",
+        cardio_type: "Swimming",
+        intensity: "Medium",
+        duration: "20.00",
+        distance: "2",
         workout_id: 1
     },
 ];
