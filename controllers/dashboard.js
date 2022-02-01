@@ -4,6 +4,7 @@ const withAuth = require('../utils/auth');
 const { User, Workout, Weights, Cardio } = require('../models');
 
 router.get('/', withAuth, (req, res) => {
+    console.log("Hello");
     Workout.findAll({
         where: {
             user_id: req.session.user_id
@@ -29,8 +30,9 @@ router.get('/', withAuth, (req, res) => {
         ]
     })
         .then(dbWorkoutData => {
-            const posts = dbWorkoutData.map(workout => workout.get({ plain: true }));
-            res.render('dashboard', { workout, loggedIn: true });
+            const workout = dbWorkoutData.map(workout => workout.get({ plain: true }));
+            // res.render('dashboard', { workout, loggedIn: true });
+            console.log(workout);
         })
         .catch(err => {
             console.log(err);
@@ -38,4 +40,4 @@ router.get('/', withAuth, (req, res) => {
         });
 });
 
-module.exports = route;
+module.exports = router;
