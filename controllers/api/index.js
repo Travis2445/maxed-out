@@ -8,7 +8,6 @@ const weightsRoutes = require('./weights-routes');
 router.use('/users', userRoutes);
 router.use('/cardio', cardioRoutes);
 router.use('/workout', workoutRoutes);
-router.use('/users', userRoutes);
 router.use('/weights', weightsRoutes);
 
 module.exports = router;
