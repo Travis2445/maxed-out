@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Workout Tracker</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Tracker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
 
-<body>
-  <div class="wrapper">
-    <header>
-      <h1>
-        <a href="/">Workout Tracker</a>
-      </h1>
-      <nav>
-        <button id="logout" class="btn-no-style">logout</button>
-        <a href="/login">login</a>
-      </nav>
-    </header>
-    <main>
-      {{{ body }}}
-    </main>
-    <footer>
-      Stay on Track!
-    </footer>
-  </div>
-  <script src="/javascript/logout.js"></script>
-</body>
+  <body>
+    <div class="wrapper">
+      <header>
+        <a class="title" href="/">Workout Tracker</a>
+        <nav>
+          <button id="logout" class="button is-dark">Logout</button>
+          <a class="button is-dark" id="login" href="/login">Login</a>
+          <a class="button is-dark" id="signup" href="/signup">Create New Account</a>
+        </nav>
+      </header>
+
+    {{!-- <div class="dropdown">
+      <button class="dropbtn">Dropdown</button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div> --}}
+
+      </div>
+        <main>
+          {{{ body }}}
+        </main>
+        <footer>
+          Stay on Track!
+        </footer>
+    </div>
+
+    <script src="/javascript/logout.js"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+  </body>
 
 </html>
