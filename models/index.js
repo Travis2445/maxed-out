@@ -1,6 +1,15 @@
+const User = require('./User');
 const Workout = require('./Workout');
 const Weights = require('./Weights');
 const Cardio = require('./Cardio');
+
+User.hasMany(Workout, {
+    foreignKey: 'user_id'
+});
+
+Workout.belongsTo(User, {
+    foreignKey:'user_id'
+});
 
 Weights.belongsTo(Workout, {
     foreignKey: 'workout_id'
