@@ -1,10 +1,13 @@
-<section>
-    <h2>Your Workouts</h2>
+
+ <section>
+    <h2>Your Workouts</h2> 
+    {{#if workout.length}}
     <ol>
-    {{#each workout}}
+        {{#each workout as |workout|}}
     <li>
-        {{workout}}
+        Edit
     </li>
     {{/each}}
     </ol>
 </section>
+{{/if}}
