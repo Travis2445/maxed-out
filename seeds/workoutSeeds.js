@@ -2,7 +2,7 @@ const { Workout } = require('../models');
 
 const workoutData = [
     {
-        workout_type: 'Conditiong',
+        workout_type: 'Conditioning',
         user_id: 1
     },
     {

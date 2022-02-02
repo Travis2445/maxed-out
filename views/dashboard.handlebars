@@ -5,7 +5,15 @@
     <ol>
         {{#each workout as |workout|}}
     <li>
-        Edit
+        {{workout.workout_type}}
+        {{reps}}
+        {{weights.intensity}}
+        {{weights.duration}}
+
+        {{cardio.intensity}}
+        {{cardio.duration}}
+        {{cardio.distance}}
+        
     </li>
     {{/each}}
     </ol>

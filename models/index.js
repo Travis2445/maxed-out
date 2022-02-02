@@ -3,7 +3,7 @@ const Workout = require('./Workout');
 const Weights = require('./Weights');
 const Cardio = require('./Cardio');
 
-User.hasOne(Workout, {
+User.hasMany(Workout, {
     foreignKey: 'user_id'
 });
 

@@ -3,8 +3,10 @@ const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
 const { User, Workout, Weights, Cardio } = require('../models');
 
+
 router.get('/', withAuth, (req, res) => {
     console.log("Hello");
+    console.log(req.session.user_id);
     Workout.findAll({
         where: {
             user_id: req.session.user_id
@@ -16,15 +18,15 @@ router.get('/', withAuth, (req, res) => {
         include: [
             {
                 model: Cardio,
-                attributes: ['id', 'cardio_type', 'intensity', 'duration', 'distance']
+                attributes: ['id', 'cardio_type', 'intensity', 'duration', 'distance', 'user_id']
             },
             {
                 model: Weights,
-                attributes: ['id', 'weight_type', 'reps', 'intensity', 'duration']
+                attributes: ['id', 'weight_type', 'reps', 'intensity', 'duration', 'user_id']
             },
             {
                 model: User,
-                attributes: ['email']
+                attributes: ['username']
             }
         ]
     })
@@ -38,5 +40,6 @@ router.get('/', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 });
+
 
 module.exports = router;
