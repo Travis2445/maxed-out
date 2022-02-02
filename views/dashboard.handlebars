@@ -1,6 +1,10 @@
 <section>
     <h2>Your Workouts</h2>
     <ol>
-        {{#each workout as |workout|}}
+    {{#each workout}}
+    <li>
+        {{workout}}
+    </li>
+    {{/each}}
     </ol>
 </section>
