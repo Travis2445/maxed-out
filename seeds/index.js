@@ -7,7 +7,7 @@ const seedWorkout = require('./workoutSeeds');
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  //await seedUser();
+  await seedUser();
   await seedWorkout();
   await seedCardio();
   await seedWieghts();

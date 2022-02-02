@@ -28,4 +28,4 @@ Workout.hasMany(Cardio, {
     foreignKey: 'workout_id'
 });
 
-module.exports = { Workout, Cardio, Weights };
+module.exports = { Workout, Cardio, Weights, User };

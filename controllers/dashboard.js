@@ -31,7 +31,7 @@ router.get('/', withAuth, (req, res) => {
     })
         .then(dbWorkoutData => {
             const workout = dbWorkoutData.map(workout => workout.get({ plain: true }));
-            // res.render('dashboard', { workout, loggedIn: true });
+            res.render('dashboard', { workout, loggedIn: true });
             console.log(workout);
         })
         .catch(err => {
