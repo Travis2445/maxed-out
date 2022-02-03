@@ -2,20 +2,24 @@
  <section>
     <h2>Your Workouts</h2> 
     {{#if workout.length}}
-    <ol>
+    <ul>
         {{#each workout as |workout|}}
     <li>
         {{workout.workout_type}}
-        {{reps}}
-        {{weights.intensity}}
-        {{weights.duration}}
-
-        {{cardio.intensity}}
-        {{cardio.duration}}
-        {{cardio.distance}}
-        
+            <ul>
+            {{#each cardios as |cardios|}}
+                <li>
+                {{cardios.cardio_type}}
+                </li>
+                {{cardios.intensity}}
+                {{cardios.duration}}
+                <li>
+                {{cardios.distance}}
+                </li>
+            {{/each}}
+            </ul>
     </li>
     {{/each}}
-    </ol>
+    </ul>
 </section>
 {{/if}}

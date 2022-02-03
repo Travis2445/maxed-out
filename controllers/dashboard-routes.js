@@ -41,5 +41,28 @@ router.get('/', withAuth, (req, res) => {
         });
 });
 
-
+router.get('/', withAuth, (req, res) => {
+    console.log("Hello");
+    console.log(req.session.user_id);
+    Cardio.findAll({
+        where: {
+            user_id: req.session.user_id
+        },
+        attributes: [
+            'id',
+            'cardio_type',
+            'duration',
+            'distance',
+        ]
+    })
+        .then(dbWorkoutData => {
+            const workout = dbWorkoutData.map(workout => workout.get({ plain: true }));
+            res.render('dashboard', { workout, loggedIn: true });
+            console.log(workout);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 module.exports = router;
