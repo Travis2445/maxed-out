@@ -6,6 +6,7 @@ const cardioData = [
         intensity: "Medium",
         duration: "60.00",
         distance: "5",
+        date: "2022-01-20",
         workout_id: 1,
         user_id: 1
     },
@@ -14,6 +15,7 @@ const cardioData = [
         intensity: "High",
         duration: "60.00",
         distance: "10",
+        date: "2022-01-23",
         workout_id: 1,
         user_id: 1
     },
@@ -22,6 +24,7 @@ const cardioData = [
         intensity: "Medium",
         duration: "20.00",
         distance: "2",
+        date: "2022-01-27",
         workout_id: 1,
         user_id: 1
     },

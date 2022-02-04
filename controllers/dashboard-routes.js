@@ -18,11 +18,11 @@ router.get('/', withAuth, (req, res) => {
         include: [
             {
                 model: Cardio,
-                attributes: ['id', 'cardio_type', 'intensity', 'duration', 'distance', 'user_id']
+                attributes: ['id', 'cardio_type', 'intensity', 'duration', 'distance', 'date', 'user_id']
             },
             {
                 model: Weights,
-                attributes: ['id', 'weight_type', 'reps', 'intensity', 'duration', 'user_id']
+                attributes: ['id', 'weight_type', 'reps', 'intensity', 'duration', 'date', 'user_id']
             },
             {
                 model: User,

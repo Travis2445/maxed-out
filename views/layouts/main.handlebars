@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workout Tracker</title>
+    <title>Maxed Out</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
@@ -12,39 +12,32 @@
   <body>
     <div class="wrapper">
       <header>
-        <a class="title" href="/">Workout Tracker</a>
+        <figure class="logo">
+          <img src="logo.png">  
+        </figure> 
         <nav>
-          {{#if loggedIn}}
-          <a class="button is-dark" href="/dashboard">My Dashboard</a>
-          <button id="logout" class="button is-dark">Logout</button>
-          {{else}}
-          <a class="button is-dark" id="login" href="/login">Login</a>
-          <a class="button is-dark" id="signup" href="/signup">Create New Account</a>
-          {{/if}}
+         
+          <a class="button is-dark is-medium" href="/dashboard">My Dashboard</a>
+          <button id="logout" class="button is-dark is-medium">Logout</button>
+         
+          <a class="button is-dark is-medium" id="login" href="/login">Login</a>
+          <a class="button is-dark is-medium" id="signup" href="/signup">Create New Account</a>
+         
         </nav>
       </header>
-
-    {{!-- <div class="dropdown">
-      <button class="dropbtn">Dropdown</button>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-    </div> --}}
 
       </div>
         <main>
           {{{ body }}}
         </main>
         <footer>
-          Stay on Track!
+          Life to the Max!
         </footer>
     </div>
 
-    {{#if loggedIn}}
+    
     <script src="/javascript/logout.js"></script>
-    {{/if}}
+   
 
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 

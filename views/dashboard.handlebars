@@ -1,25 +1,137 @@
+<div class="tile is-ancestor">
+    <div class="tile is-parent">
+        <div class="tile is-child notification is-info box">
+           <p class="title">Welcome to your Workout Dashboard!</p> 
+        </div>
+    </div>
+</div>
 
- <section>
-    <h2>Your Workouts</h2> 
-    {{#if workout.length}}
-    <ul>
-        {{#each workout as |workout|}}
-    <li>
-        {{workout.workout_type}}
-            <ul>
-            {{#each cardios as |cardios|}}
-                <li>
-                {{cardios.cardio_type}}
-                </li>
-                {{cardios.intensity}}
-                {{cardios.duration}}
-                <li>
-                {{cardios.distance}}
-                </li>
-            {{/each}}
-            </ul>
-    </li>
-    {{/each}}
-    </ul>
-</section>
-{{/if}}
+<div class="tile is-ancestor">
+    <div class="tile is-3">
+        <div class="tile is-parent">
+            <div class="tile is-child box">
+                <form class="workout-form">
+                    <p class="title">Log a New Workout</label>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Date</label>
+                            <input class="input" type="date" id="date" placeholder="Ex. 2022-01-01">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Workout Type</label>
+                            <input class="input" type="type" id="type" placeholder="Ex. Cardio">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Activity Name</label>
+                            <input class="input" type="activity" id="name" placeholder="Ex: Run">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Intensity</label>
+                            <input class="input" type="intensity" id="intensity" placeholder="Ex. Low">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Duration (in Minutes)</label>
+                            <input class="input" type="duration" id="duration" placeholder="Ex. 45">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Distance (in Miles)</label>
+                            <input class="input" type="distance" id="distance" placeholder="Ex. 5">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-dark" type="submit">Log it!</button>            
+                        </div>
+                    </div>
+                </form>
+
+                <script src="/javascript/new_workout.js"></script>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="tile is-parent">
+        <div class="tile">
+            <div class="tile is-child box">
+                <p class="title">Your Workouts</p>
+                    <table class="table is-striped is-fullwidth">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Activity</th>
+                                <th>Intensity</th>
+                                <th>Duration</th>
+                                <th>Distance</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        {{#if workout.length}}
+                        <tbody>
+                            {{#each workout as |workout|}}
+                            {{#each cardios as |cardios|}}
+                            <tr>
+                                <th>{{workout.workout_type}}</th>
+                                <td>{{cardios.cardio_type}}</td>
+                                <td>{{cardios.intensity}}</td>
+                                <td>{{cardios.duration}}</td>
+                                <td>{{cardios.distance}}</td>
+                                <td>{{cardios.date}}</td>
+                            </tr>
+                            {{/each}}
+                            {{#each weights as |weights|}}
+                            <tr>
+                                <th>{{workout.workout_type}}</th>
+                                <td>{{weights.weight_type}}</td>
+                                <td>{{weights.intensity}}</td>
+                                <td>{{weights.duration}}</td>
+                                <td>{{weights.reps}}</td>  
+                                <td>{{weights.date}}</td>
+                            </tr>
+                            {{/each}}
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                        {{/if}}
+                    </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+    {{!-- <section>
+        <h2>Your Workouts</h2> 
+        {{#if workout.length}}
+        <ul>
+            {{#each workout as |workout|}}
+        <li>
+            {{workout.workout_type}}
+                <ul>
+                {{#each cardios as |cardios|}}
+                    <li>
+                    {{cardios.cardio_type}}
+                    </li>
+                    {{cardios.intensity}}
+                    {{cardios.duration}}
+                    <li>
+                    {{cardios.distance}}
+                    </li>
+                {{/each}}
+                </ul>
+        </li>
+        {{/each}}
+        </ul>
+    </section>
+    {{/if}} --}}

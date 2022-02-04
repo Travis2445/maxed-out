@@ -38,7 +38,6 @@ router.get('/:id', (req, res) => {
     });
 });
 
-
 // POST /api/weights
 router.post('/', (req, res) => {
     Weights.create(
@@ -46,9 +45,10 @@ router.post('/', (req, res) => {
     ) .then(dbWeightsData => res.json(dbWeightsData)) 
     .catch(err => {
         console.log(err);
-        res.status(500).json(err);
+        res.status(400).json(err);
     });
 });
+
 // PUT /api/weights/:id
 router.put('/:id', (req, res) => {
     Weights.update(req.body, {
