@@ -40,9 +40,15 @@ router.get('/:id', (req, res) => {
 
 // POST /api/cardio
 router.post('/', (req, res) => {
-    Cardio.create(
-        req.body
-    )
+    Cardio.create({
+        cardio_type: req.body.cardio_type,
+        intensity: req.body.intensity,
+        duration: req.body.duration,
+        distance: req.body.distance,
+        date: req.body.date,
+        user_id: req.session.user_id,
+        workout_id: req.body.workout_id
+    })
     .then(dbCardioData => res.json(dbCardioData))
     .catch(err => {
         console.log(err);
