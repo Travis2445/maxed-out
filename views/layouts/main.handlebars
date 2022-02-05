@@ -13,16 +13,16 @@
     <div class="wrapper">
       <header>
         <figure class="logo">
-          <img src="logo.png">  
+          <img src="/logo.png">  
         </figure> 
         <nav>
-         
+          {{#if loggedIn}}
           <a class="button is-dark is-medium" href="/dashboard">My Dashboard</a>
           <button id="logout" class="button is-dark is-medium">Logout</button>
-         
+          {{else}}
           <a class="button is-dark is-medium" id="login" href="/login">Login</a>
           <a class="button is-dark is-medium" id="signup" href="/signup">Create New Account</a>
-         
+          {{/if}}
         </nav>
       </header>
 
@@ -35,9 +35,9 @@
         </footer>
     </div>
 
-    
+    {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
-   
+    {{/if}}
 
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 

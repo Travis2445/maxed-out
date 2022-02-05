@@ -1,7 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
-const { all } = require('../controllers');
 
 class Weights extends Model {}
 

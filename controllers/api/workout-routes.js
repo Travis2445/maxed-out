@@ -48,9 +48,8 @@ router.get('/:id', (req, res) => {
 // POST /api/workout
 router.post('/', (req, res) => {
     Workout.create({
-    user_id: req.session.user_id,
-    workout_type: req.body.workout_type
-    
+        user_id: req.session.user_id,
+        workout_type: req.body.workout_type
     })
     .then(dbWorkoutData => res.json(dbWorkoutData))
     .catch(err => {

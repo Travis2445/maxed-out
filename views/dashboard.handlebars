@@ -7,11 +7,11 @@
 </div>
 
 <div class="tile is-ancestor">
-    <div class="tile is-3">
+    <div class="tile is-5">
         <div class="tile is-parent">
-            <div class="tile is-child box">
-                <form class="workout-form">
-                    <p class="title">Log a New Workout</label>
+            <article class="tile is-child box">
+                <form class="cardio-form">
+                    <p class="title">Log a Cardio Workout</label>
                     <div class="field">
                         <p class="control">
                             <label class="label">Date</label>
@@ -21,21 +21,15 @@
                     <div class="field">
                         <p class="control">
                             <label class="label">Workout Type</label>
-                            <input class="input" type="type" id="type" placeholder="Ex. Cardio">
+                            <input class="input" type="type" id="type" placeholder="Ex. Training">
                         </p>
                     </div>
                     <div class="field">
                         <p class="control">
                             <label class="label">Activity Name</label>
-                            <input class="input" type="activity" id="name" placeholder="Ex: Run">
+                            <input class="input" type="activity" id="name" placeholder="Ex. Run">
                         </p>
-                    </div>
-                    <div class="field">
-                        <p class="control">
-                            <label class="label">Activity Type</label>
-                            <input class="input" type="activity" id="activity_type" placeholder="Ex: Conditioning">
-                        </p>
-                    </div>                   
+                    </div>                 
                     <div class="field">
                         <p class="control">
                             <label class="label">Intensity</label>
@@ -61,10 +55,60 @@
                     </div>
                 </form>
 
-                <script src="/javascript/new_workout.js"></script>
+                <script src="/javascript/new_cardio.js"></script>
+            </article>
+        </div>
 
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+                <form class="weights-form">
+                    <p class="title">Log a Strength Workout</label>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Date</label>
+                            <input class="input" type="date" id="date" placeholder="Ex. 2022-01-01">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Workout Type</label>
+                            <input class="input" type="type" id="type" placeholder="Ex. Legs">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Activity Name</label>
+                            <input class="input" type="activity" id="name" placeholder="Ex. Squats">
+                        </p>
+                    </div>                 
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Intensity</label>
+                            <input class="input" type="intensity" id="intensity" placeholder="Ex. Low">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Duration (in Minutes)</label>
+                            <input class="input" type="duration" id="duration" placeholder="Ex. 10">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Reps</label>
+                            <input class="input" type="reps" id="reps" placeholder="Ex. 10">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-dark" type="submit">Log it!</button>            
+                        </div>
+                    </div>
+                </form>
 
-            </div>
+                <script src="/javascript/new_weights.js"></script>
+
+            </article>
         </div>
     </div>
 
@@ -117,30 +161,3 @@
         </div>
     </div>
 </div>
-
-
-
-    {{!-- <section>
-        <h2>Your Workouts</h2> 
-        {{#if workout.length}}
-        <ul>
-            {{#each workout as |workout|}}
-        <li>
-            {{workout.workout_type}}
-                <ul>
-                {{#each cardios as |cardios|}}
-                    <li>
-                    {{cardios.cardio_type}}
-                    </li>
-                    {{cardios.intensity}}
-                    {{cardios.duration}}
-                    <li>
-                    {{cardios.distance}}
-                    </li>
-                {{/each}}
-                </ul>
-        </li>
-        {{/each}}
-        </ul>
-    </section>
-    {{/if}} --}}

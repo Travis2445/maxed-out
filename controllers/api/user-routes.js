@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const User = require('../../models/User');
+const { User, Workout, Cardio, Weights } = require('../../models');
 
 // GET /api/users
 router.get('/', (req, res) => {
@@ -19,6 +19,16 @@ router.get('/:id', (req, res) => {
         attributes: { exclude: ['password'] },
         where: {
             id: req.params.id
+        },
+        include: { 
+            model: Workout, 
+            attributes: ['id', 'workout_type'],
+            include: [{
+                model: Cardio
+            },
+            {
+                model: Weights
+            }]
         }
     })
         .then(dbUserData => {
