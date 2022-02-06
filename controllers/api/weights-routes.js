@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const withAuth = require('../../utils/auth');
 const { Workout, Weights } = require('../../models');
 
 
@@ -40,7 +39,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST /api/weights
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     Weights.create(
     req.body
     ) .then(dbWeightsData => res.json(dbWeightsData)) 
@@ -51,7 +50,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 // PUT /api/weights/:id
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
     Weights.update(req.body, {
         where: {
             id: req.params.id
@@ -71,7 +70,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 // DELETE /api/weights/:id
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
     Weights.destroy({
         where: {
             id: req.params.id

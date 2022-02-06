@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const withAuth = require('../../utils/auth');
 const { Workout, Weights, Cardio } = require('../../models');
 
 
@@ -47,7 +46,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST /api/workout
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     Workout.create({
         user_id: req.session.user_id,
         workout_type: req.body.workout_type
@@ -60,7 +59,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 // PUT /api/workout/:id
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
     Workout.update(req.body, {
         where: {
             id: req.params.id
@@ -80,7 +79,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 // DELETE /api/workout/:id
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
     Workout.destroy({
         where: {
             id: req.params.id

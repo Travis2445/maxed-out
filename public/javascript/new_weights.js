@@ -36,7 +36,7 @@ const reps = document.querySelector('#w-reps').value.trim();
 //   const workout_id = document.querySelector('#activity_type').value.trim();
 
 if (date && weight_type && intensity && duration && reps) {
-  console.log(newWorkoutId);
+  console.log(date);
 
   const workoutResponse = await fetch('/api/workout/' + newWorkoutId, {
       method: 'get',

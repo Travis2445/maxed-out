@@ -1,4 +1,4 @@
-async function logoutFormHandler(event) {
+async function logoutFormHandler() {
     const response = await fetch('/api/users/logout', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' }

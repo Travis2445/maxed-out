@@ -5,7 +5,6 @@ const { User, Workout, Weights, Cardio } = require('../models');
 
 
 router.get('/', withAuth, (req, res) => {
-    console.log("Hello");
     console.log(req.session.user_id);
     Workout.findAll({
         where: {
