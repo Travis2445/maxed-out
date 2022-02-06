@@ -1,7 +1,7 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const workout_type = document.querySelector('#type').value.trim();
+  const workout_type = document.querySelector('#w-type').value.trim();
 
   if (workout_type) {
     const response = await fetch('/api/workout', {
@@ -16,7 +16,7 @@ async function newFormHandler(event) {
     if (response.ok) {
       response.json().then(data => {
           var newWorkoutId = data.id;
-          cardioFormHandler(newWorkoutId);
+          weightsFormHandler(newWorkoutId);
       });
       // cardioFormHandler();
     } else {
@@ -27,12 +27,12 @@ async function newFormHandler(event) {
 
 async function weightsFormHandler(newWorkoutId) {
 
-const date = document.querySelector('#date').value.trim();
+const date = document.querySelector('#w-date').value.trim();
 //   const workout_type = document.querySelector('#type').value.trim();
-const weight_type = document.querySelector('#name').value.trim();
-const intensity = document.querySelector('#intensity').value.trim();
-const duration = document.querySelector('#duration').value.trim();
-const reps = document.querySelector('#reps').value.trim();
+const weight_type = document.querySelector('#w-name').value.trim();
+const intensity = document.querySelector('#w-intensity').value.trim();
+const duration = document.querySelector('#w-duration').value.trim();
+const reps = document.querySelector('#w-reps').value.trim();
 //   const workout_id = document.querySelector('#activity_type').value.trim();
 
 if (date && weight_type && intensity && duration && reps) {

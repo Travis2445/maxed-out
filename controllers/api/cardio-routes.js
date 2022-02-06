@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const withAuth = require('../../utils/auth');
 const { Workout, Cardio } = require('../../models');
 
 // GET /api/cardio
@@ -39,7 +40,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST /api/cardio
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Cardio.create({
         cardio_type: req.body.cardio_type,
         intensity: req.body.intensity,
@@ -57,7 +58,7 @@ router.post('/', (req, res) => {
 });
 
 // PUT /api/cardio/:id
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Cardio.update(req.body, {
         where: {
             id: req.params.id
@@ -77,7 +78,7 @@ router.put('/:id', (req, res) => {
 });
 
 // DELETE /api/cardio/:id
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Cardio.destroy({
         where: {
             id: req.params.id
