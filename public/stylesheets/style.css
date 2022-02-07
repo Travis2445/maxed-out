@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px 5px 20px;
+}
+
+.logo {
+    width: 120px;
+}
+
+.login-form, .signup-form {
+    margin: 100px;
+}
+
+#title {
+    font-size: 50px;
+    color:black;
+    font-weight:bolder;
+}
+
+.text {
+    font-size: 10px;
+}
+
+footer {
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    font-size: 110%;
+}

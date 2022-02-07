@@ -1,0 +1,163 @@
+<div class="tile is-ancestor">
+    <div class="tile is-parent">
+        <div class="tile is-child notification is-info box">
+           <p class="title">Welcome to your Workout Dashboard!</p> 
+        </div>
+    </div>
+</div>
+
+<div class="tile is-ancestor">
+    <div class="tile is-4">
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+                <form class="cardio-form">
+                    <p class="title is-4">Log a Cardio Workout</label>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Date</label>
+                            <input class="input" type="date" id="date" placeholder="Ex. 2022-01-01">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Workout Type</label>
+                            <input class="input" type="type" id="type" placeholder="Ex. Training">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Activity Name</label>
+                            <input class="input" type="activity" id="name" placeholder="Ex. Run">
+                        </p>
+                    </div>                 
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Intensity</label>
+                            <input class="input" type="intensity" id="intensity" placeholder="Ex. Low">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Duration (in Minutes)</label>
+                            <input class="input" type="duration" id="duration" placeholder="Ex. 45">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Distance (in Miles)</label>
+                            <input class="input" type="distance" id="distance" placeholder="Ex. 5">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-dark" type="submit">Log it!</button>            
+                        </div>
+                    </div>
+                </form>
+
+                <script src="/javascript/new_cardio.js"></script>
+            </article>
+        </div>
+
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+                <form class="weights-form">
+                    <p class="title is-4">Log a Strength Workout</label>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Date</label>
+                            <input class="input" type="date" id="w-date" placeholder="Ex. 2022-01-01">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Workout Type</label>
+                            <input class="input" type="type" id="w-type" placeholder="Ex. Legs">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Activity Name</label>
+                            <input class="input" type="activity" id="w-name" placeholder="Ex. Squats">
+                        </p>
+                    </div>                 
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Intensity</label>
+                            <input class="input" type="intensity" id="w-intensity" placeholder="Ex. Low">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Duration (in Minutes)</label>
+                            <input class="input" type="duration" id="w-duration" placeholder="Ex. 10">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <label class="label">Reps</label>
+                            <input class="input" type="reps" id="w-reps" placeholder="Ex. 10">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-dark" type="submit">Log it!</button>            
+                        </div>
+                    </div>
+                </form>
+
+                <script src="/javascript/new_weights.js"></script>
+
+            </article>
+        </div>
+    </div>
+
+
+
+    <div class="tile is-parent">
+        <div class="tile">
+            <div class="tile is-child box">
+                <p class="title">Your Workouts</p>
+                    <table class="table is-striped is-fullwidth">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Activity</th>
+                                <th>Intensity</th>
+                                <th>Duration</th>
+                                <th>Distance/Reps</th>
+                            </tr>
+                        </thead>
+                        {{#if workout.length}}
+                        <tbody>
+                            {{#each workout as |workout|}}
+                            {{#each cardios as |cardios|}}
+                            <tr>
+                                <th>{{cardios.date}}</th>
+                                <td>{{workout.workout_type}}</td>
+                                <td>{{cardios.cardio_type}}</td>
+                                <td>{{cardios.intensity}}</td>
+                                <td>{{cardios.duration}}</td>
+                                <td>{{cardios.distance}}</td>
+                            </tr>
+                            {{/each}}
+                            {{#each weights as |weights|}}
+                            <tr>
+                                <th>{{weights.date}}</th>
+                                <td>{{workout.workout_type}}</td>
+                                <td>{{weights.weight_type}}</td>
+                                <td>{{weights.intensity}}</td>
+                                <td>{{weights.duration}}</td>
+                                <td>{{weights.reps}}</td>  
+                            </tr>
+                            {{/each}}
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                        {{/if}}
+                    </table>
+            </div>
+        </div>
+    </div>
+</div>

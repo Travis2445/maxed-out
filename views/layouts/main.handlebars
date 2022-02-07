@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxed Out</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <figure class="logo">
+          <img src="/logo.png">  
+        </figure> 
+        <nav>
+          {{#if loggedIn}}
+          <a class="button is-dark is-medium" href="/dashboard">My Dashboard</a>
+          <button id="logout" class="button is-dark is-medium">Logout</button>
+          {{else}}
+          <a class="button is-dark is-medium" id="login" href="/login">Login</a>
+          <a class="button is-dark is-medium" id="signup" href="/signup">Create New Account</a>
+          {{/if}}
+        </nav>
+      </header>
+
+      </div>
+        <main>
+          {{{ body }}}
+        </main>
+        <footer>
+          Life to the Max!
+        </footer>
+    </div>
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+  </body>
+
+</html>
