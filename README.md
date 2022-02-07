@@ -13,7 +13,7 @@
 
 
 ## Description
-  A simple and easy to use at home fitness tracker where a user can log, view, edit, and delete their workouts from the comfort of their own home. After a user logs in, they are taken to their personal workout dashboard, where they can see all workouts they have completed and add new ones.
+  A simple and easy to use at home fitness tracker where a user can log and view their workouts from the comfort of their own home. After a user logs in, they are taken to their personal workout dashboard, where they can see all workouts they have completed and add new ones.
   ##### Link to Deployed Application: https://aqueous-headland-83808.herokuapp.com/
 
 ## Table of Contents
