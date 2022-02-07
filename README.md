@@ -14,7 +14,7 @@
 
 ## Description
   A simple and easy to use at home fitness tracker where a user can log, view, edit, and delete their workouts from the comfort of their own home. After a user logs in, they are taken to their personal workout dashboard, where they can see all workouts they have completed and add new ones.
-  ##### Link to Deployed Application: tbd
+  ##### Link to Deployed Application: https://aqueous-headland-83808.herokuapp.com/
 
 ## Table of Contents
   * [Installation](#installation)
@@ -47,8 +47,12 @@
   There are seed files located in this project. If you would like to use the seed files, simply type 'npm run seed' in the command line before starting the application. 
 
   ### Screenshot of Deployed Application
-  ![Screenshot](tbd)
-
+  * Homepage
+  <img width="1379" alt="Screen Shot 2022-02-06 at 9 27 51 PM" src="https://user-images.githubusercontent.com/91511805/152720754-03e75d7c-ee97-497a-a005-cfd2b80693c3.png">
+  
+  * After logging in, users view their personal dashboard
+  <img width="1625" alt="Screen Shot 2022-02-06 at 9 38 23 PM" src="https://user-images.githubusercontent.com/91511805/152720820-cb78d0ac-a2dd-4046-a4e8-81f5a5884baa.png">
+  
 ## Contributing
   There are no current guidelines for contribution.
 
